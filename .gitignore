@@ -1,28 +1,34 @@
-# Carpetas de secuencias privadas
+# Contenedores
+*.sif
+*.img
+*.simg
+
+# Resultados grandes
+resultados/
+
+# Datos pesados
 data/secuencias_rachel/
 data/secuencias_douglas/
 data/mis_secuencias/
-# Credenciales
+
+# Alineamientos
+*.fasta
+*.phy
+*.nex
+
+# Árboles
+*.tree
+*.tre
+*.t
+*.trprobs
+*.parts
+*.ckp
+*.run*
+*.mcmc
+*.p
+
+# Logs
+*.log
+
+# Variables sensibles
 .env
-
-# Resultados pesados
-resultados/*.log
-resultados/*.t
-resultados/*.p
-resultados/*.ckp
-resultados/*.mcmc
-resultados/*.run*
-resultados/*.trprobs
-resultados/*.parts
-resultados/*.tree
-resultados/*.tre
-
-# Archivos temporales
-*.tmp
-*.swp
-
-# Python
-__pycache__/
-
-# Apptainer temporales
-*.simg
