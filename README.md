@@ -32,4 +32,4 @@ proyecto_final/
 ├─ resultados/
 │  ├─ alineamientos
 │  ├─ relación_taxa_corregidos.txt
-   └─ phylogeny
+   └─ filogenias
