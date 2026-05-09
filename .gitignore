@@ -1,0 +1,28 @@
+# Carpetas de secuencias privadas
+data/secuencias_rachel/
+data/secuencias_douglas/
+
+# Credenciales
+.env
+
+# Resultados pesados
+resultados/*.log
+resultados/*.t
+resultados/*.p
+resultados/*.ckp
+resultados/*.mcmc
+resultados/*.run*
+resultados/*.trprobs
+resultados/*.parts
+resultados/*.tree
+resultados/*.tre
+
+# Archivos temporales
+*.tmp
+*.swp
+
+# Python
+__pycache__/
+
+# Apptainer temporales
+*.simg

@@ -1,0 +1,86 @@
+#!/bin/bash
+
+# Este script correrá un análisis de Máxima Verosimilitud en RAxML
+# 07/05/2026
+# Escrito por Carla Silva
+
+#!/bin/bash
+
+# 06/05/2026
+# Escrito por Carla Silva
+
+# ======================================
+# Rutas
+# ======================================
+
+CONTENEDOR=/home/csilva/proyecto_final/contenedores/bioinfo_container.sif
+BASE=/home/csilva/proyecto_final/resultados
+
+INPUT=prueba_aligned.fasta
+
+PREFIX=ITS
+
+echo "====================================="
+echo "Corrigiendo nombres duplicados"
+echo "====================================="
+
+# Eliminar tabla previa si existe
+rm -f "$BASE/$MAP"
+
+# Corregir nombres repetidos en FASTA
+awk '
+BEGIN{
+    OFS=""
+}
+
+/^>/ {
+
+    nombre=substr($0,2)
+
+    count[nombre]++
+
+    nuevo=nombre "_" count[nombre]
+
+    print ">", nuevo
+
+    print nuevo "\t" nombre >> "'"$BASE/$MAP"'"
+
+    next
+}
+
+{
+    print
+}
+' "$BASE/$INPUT" > "$BASE/$FIXED"
+
+echo "Archivo corregido:"
+echo "$BASE/$FIXED"
+
+echo "Tabla de equivalencias:"
+echo "$BASE/$MAP"
+
+echo "====================================="
+echo "Iniciando análisis con RAxML"
+echo "====================================="
+
+# Ejecutar RAxML usando FASTA
+apptainer exec \
+    -B /home/csilva/proyecto_final:/work \
+    --pwd /work/resultados \
+    "$CONTENEDOR" \
+    raxmlHPC-PTHREADS-SSE3 \
+    -T 4 \
+    -s "$FIXED" \
+    -n "$PREFIX" \
+    -m GTRGAMMA \
+    -p 12345
+
+echo "====================================="
+echo "RAxML terminado"
+echo "====================================="
+
+echo "Archivos generados en:"
+echo "$BASE/RAxML_*"
+
+# Telegram
+bash /home/csilva/proyecto_final/bin/telegram.sh "analisis_ML_ITS"
