@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Este script correrá un análisis Bayesiano en Mr Bayes
+# Este script correrá un análisis Bayesiano en Mr Bayes
 # 08/05/2026
 # Carla Silva
 
