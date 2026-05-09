@@ -2,7 +2,7 @@
 
 # Este script convierte FASTA a PHYLIP y NEXUS usando seqret dentro del contenedor
 # 06/05/2026
-# Escrito por Carla Silva
+# Carla Silva
 
 # Rutas
 CONTENEDOR=/home/csilva/proyecto_final/contenedores/bioinfo_container.sif
