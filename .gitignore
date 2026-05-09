@@ -1,7 +1,7 @@
 # Carpetas de secuencias privadas
 data/secuencias_rachel/
 data/secuencias_douglas/
-
+data/mis_secuencias/
 # Credenciales
 .env
 
