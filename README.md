@@ -7,7 +7,7 @@ Este repositorio muestra los scripts para:
 - corrección de nombres duplicados
 - ejecutar un análisis de máxima verosimilitud en RAxML y
 - un análisis bayesiano en Mr. Bayes
-- notificación al término de un análisis a través de un bot de Telegram
+- notificación al término de cada análisis mediante un bot de Telegram
   
 ## Estructura de carpetas
 ```
