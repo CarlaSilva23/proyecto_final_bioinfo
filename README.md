@@ -1,5 +1,5 @@
 # Análisis filogenético de Thelephorales
-## Carla Elisa Silva-Tostado
+## Carla Elisa Silva Tostado
 
 Este repositorio muestra los scripts para:
 - unir las secuencias de varios colaboradores en un solo archivo .fasta
